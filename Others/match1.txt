@@ -1,0 +1,5 @@
+file1 matched with bank.py  percentage is  38.89
+file1 matched with class1.py  percentage is  42.11
+file1 matched with class2.py  percentage is  42.11
+file1 matched with dict.py  percentage is  12.12
+file1 matched with tuples.py  percentage is  12.12

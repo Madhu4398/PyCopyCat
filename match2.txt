@@ -1,0 +1,15 @@
+bank.py is compared with enum.py percentage is: 22.38
+bank.py is compared with map.py percentage is: 24.76
+bank.py is compared with say.py percentage is: 6.85
+bank.py is compared with sets.py percentage is: 22.32
+bank.py is compared with upack.py percentage is: 14.63
+enum.py is compared with map.py percentage is: 12.94
+enum.py is compared with say.py percentage is: 16.16
+enum.py is compared with sets.py percentage is: 34.5
+enum.py is compared with upack.py percentage is: 14.37
+map.py is compared with say.py percentage is: 3.62
+map.py is compared with sets.py percentage is: 14.63
+map.py is compared with upack.py percentage is: 21.3
+say.py is compared with sets.py percentage is: 28.44
+say.py is compared with upack.py percentage is: 11.99
+sets.py is compared with upack.py percentage is: 10.47

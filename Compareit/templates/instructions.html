@@ -1,0 +1,59 @@
+<!-- Instructions page -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PyCopyCat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="{%url 'homepage'%}" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  
+  
+  <div class="w3-dropdown-hover w3-small">
+    <button class="w3-button" title="Notifications">Plagiarism <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="{%url 'upload1'%}" class="w3-bar-item w3-button">File to File</a>
+      <a href="{%url 'upload2'%}" class="w3-bar-item w3-button">File to Files</a>
+      <a href="{%url 'folder_files'%}" class="w3-bar-item w3-button">Folder Files</a>
+    </div>
+  </div>
+  <a href="{%url 'instructions'%}" class="w3-bar-item w3-button w3-small w3-hover-white">Instructions</a>
+ </div>
+</div>
+<div><br></div>  
+<div class = "content">
+  <h1>Instructions</h1>
+
+  <h2> 3 options to find plagiarism:</h2>
+  <ol>
+    <li>File to File</li>
+    <li>File to Files</li>
+    <li>Folder Files</li>
+  </ol>
+  <h3>File to File</h3>
+  <p>In File to File comparison, 2 python files are uploaded and checked for plagiarism.</p>
+
+  <h3>File to Files</h3>
+  <p>In File to Files comparison, a single python file and folder containing multiple files are uploaded and checked for plagiarism against each python files.<br>
+  *Moredetails: In detail percentage of plagiarism by comparing file-file.</p>
+
+  <h3>Folder Files</h3>
+  <p>In Folder Files comparison, a folder containing multiple files are uploaded and checked for plagiarism among the files in the uploaded folder.<br>
+  *Moredetails: In detail percentage of plagiarism by comparing file-file.</p>
+
+  <h3 style="color: red; text-align: center;">*WORKING OF PyCopyCat</h3>
+  <p>The python files uploaded are stored onto the system ("file1 & file2"), then using AST python module the files are converted into AST format ("file1_dump & file2_dump").
+  Finally using the SequenceMatcher to get the ratio or percentage of plagiarism.
+  The result page is diplayed with plagiarized percentage and both files show in a tabular view.</p>
+  </div>
+</body>
+</html>

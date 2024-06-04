@@ -1,0 +1,69 @@
+<!-- File to File comparison Result page -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PyCopyCat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reports.css' %}">
+</head>
+
+
+<body>
+<!-- Navbar -->
+  <div class="w3-top">
+  <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="{%url 'homepage'%}" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+
+
+    
+    <div class="w3-dropdown-hover w3-small">
+      <button class="w3-button" title="Notifications">Plagiarism <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="{%url 'upload1'%}" class="w3-bar-item w3-button">File to File</a>
+        <a href="{%url 'upload2'%}" class="w3-bar-item w3-button">File to Files</a>
+        <a href="{%url 'folder_files'%}" class="w3-bar-item w3-button">Folder Files</a>
+      </div>
+    </div>
+    
+    <a href="{%url 'instructions'%}" class="w3-bar-item w3-button w3-small w3-hover-white">Instructions</a>
+  </div>
+  </div>
+  <p><br><br></p>   
+
+  <div class="content">
+          
+    <script type="text/javascript">
+      $(function () {
+      window.onload = $('#print').click();
+    });
+    </script>
+    
+    <button id="print" onclick="window.print()" class='btn btn-success pull-right'>Print</button> 
+              
+    {% block content %}
+    <h1>Plagiarised Percentage: {{data|safe}}%</h1>  
+              
+
+      
+    {{ diff_html_table|safe }}
+
+    <label for="index"><h3>Legend: </h3></label>
+    <div class="row col-lg-12" id="index">
+        <div class="col-md-4 square-green">Text has been added.</div>
+        <div class="col-md-4 square-red">Text has been deleted.</div>
+        <div class="col-md-4 square-yellow">Text has been changed.</div>
+    </div>
+
+
+    {% endblock content %}
+
+  </div>
+</body>
+</html>

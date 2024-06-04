@@ -1,0 +1,10 @@
+bank.py is compared with class1.py percentage is: 2.38
+bank.py is compared with class2.py percentage is: 6.66
+bank.py is compared with dict.py percentage is: 1.25
+bank.py is compared with tuples.py percentage is: 1.32
+class1.py is compared with class2.py percentage is: 15.86
+class1.py is compared with dict.py percentage is: 60.51
+class1.py is compared with tuples.py percentage is: 64.35
+class2.py is compared with dict.py percentage is: 4.18
+class2.py is compared with tuples.py percentage is: 4.13
+dict.py is compared with tuples.py percentage is: 72.69

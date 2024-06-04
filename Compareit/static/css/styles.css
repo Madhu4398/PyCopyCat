@@ -1,0 +1,15 @@
+.content, .folder{
+    margin: 10px;
+}
+
+.btn {
+    display: flex;
+    justify-content: left;
+    column-gap: 3rem;
+}
+
+.btn2 {
+    display: flex;
+    justify-content: left;
+    column-gap: 3rem;
+}

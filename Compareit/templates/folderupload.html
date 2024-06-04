@@ -1,0 +1,76 @@
+<!-- Folder upload - multiple files -->
+<!DOCTYPE html>
+<html>
+<head>  
+  <title>PyCopyCat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="{%url 'homepage'%}" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  
+ 
+  <div class="w3-dropdown-hover w3-small">
+    <button class="w3-button" title="Notifications">Plagiarism <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="{%url 'upload1'%}" class="w3-bar-item w3-button">File to File</a>
+      <a href="{%url 'upload2'%}" class="w3-bar-item w3-button">File to Files</a>
+      <a href="{%url 'folder_files'%}" class="w3-bar-item w3-button">Folder Files</a>
+    </div>
+  </div>
+  
+  <a href="{%url 'instructions'%}" class="w3-bar-item w3-button w3-small w3-hover-white">Instructions</a>
+ </div>
+</div>
+<p><br>
+  </p>
+<div class="folder">
+  <h1>Upload folder</h1>
+    
+    
+  {% load static %}
+
+  {% block content %}
+  <form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}  
+      {{filename}}
+        <input type="file" accept=".py" id="filepicker" name="folder_files"  webkitdirectory directory/>
+        <h2>Files in the Folder:</h2>
+      <ul id="listing"></ul>
+          <input type="submit"/>
+  </form>
+  <script>
+  document.getElementById("filepicker").addEventListener("change", function(event) {
+    let output = document.getElementById("listing");
+    let files = event.target.files;
+
+    for (let i=0; i<files.length; i++) {
+      let item = document.createElement("li");
+      item.innerHTML = files[i].webkitRelativePath;
+
+      output.appendChild(item);
+
+    };
+  }, false); 
+
+  </script>
+
+  {% endblock %}
+  <div style="color:red">
+    <p>Make sure that the folder is empty before uploading the files into the folder.</br>
+    Because existing files along with the files you want to upload all together might take more time for execution.</br>
+    Also you don't actual need that files to be checked for plagiarism.</p>
+    <p>DIRECTORY: PyCopyCat/upload</p>
+  </div>
+</div>
+</body>
+</html>
